@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Pannellum } from "pannellum-react";
+import myImage from './img/image.png'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Pannellum
+      width="100%"
+      height="100vh"
+      image={myImage}
+      pitch={10}
+      yaw={180}
+      hfov={110}
+      autoLoad
+      onLoad={() => {
+        console.log("panorama loaded");
+      }}
+    >
+    </Pannellum>
+  )
 }
 
-export default App;
+export default App
